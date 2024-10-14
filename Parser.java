@@ -5,6 +5,7 @@ import java.util.List;
 
 //havent implemented error handling
 
+//need to add and change token types
 enum TokenType {
     IDENTIFIER, INTEGER, FLOAT, STRING,
     PLUS, MINUS, MULTIPLY, DIVIDE, ASSIGN,
