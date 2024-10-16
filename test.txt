@@ -1,0 +1,19 @@
+main num V_numinput , text V_textinput , 
+begin
+
+print V_numinput
+print -0.123
+print "Hello"
+
+V_textinput = "World"
+V_numinput = 5
+V_numinput < input
+
+F_addnums ( 1, 2.001, V_numinput) 
+
+if eq(5,5) then print "Equal" else print "Not"
+
+end
+
+num F_addnums( V_numinput, V_numinput, V_numinput)
+{ num V_a , num V_b , num V_c , begin skip; end} end
