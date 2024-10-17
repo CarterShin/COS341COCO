@@ -22,7 +22,7 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 public class Lexer {
-    static String inputFilePath = "test.txt";
+    static String inputFilePath = "Lexer/test.txt";
 
     // Error message styling
     public static final String RESET = "\033[0m";
@@ -352,7 +352,7 @@ enum TokenClass {
     TEXT,
     NUMBER,
     KEYWORD,
-    ERROR;
+    ERROR, EOF;
 }
 
 class Token {
