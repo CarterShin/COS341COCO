@@ -75,7 +75,7 @@ public class Parser {
             "DECL", "HEADER", "FTYP", "BODY", "PROLOG", "EPILOG", "LOCVARS", "SUBFUNCS"
         ));
     
-        try (BufferedReader br = new BufferedReader(new FileReader("Parser/parsetable.csv"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("Parser/parsetable_new.csv"))) {
             String line;
             String[] headers = null;
             int stateNumber = 0;
@@ -125,11 +125,11 @@ public class Parser {
 
         while (true) {
             int currentState = stateStack.peek();
-            System.out.println("Current state: " + currentState);
+            // System.out.println("Current state: " + currentState);
             Token currentToken = getCurrentToken();
-            System.out.println("Current token: " + currentToken);
+            // System.out.println("Current token: " + currentToken);
             String currentSymbol = getSymbolFromToken(currentToken);
-            System.out.println("Current symbol: " + currentSymbol);
+            // System.out.println("Current symbol: " + currentSymbol);
 
             Action action = actionTable.get(currentState).get(currentSymbol);
             if (action == null) {

@@ -1,27 +1,64 @@
-main num V_numinput , text V_textinput , 
+main
+num V_axx12 ,
+text V_axx13 ,
+num V_axx14 ,
+num V_axx15 ,
 begin
-print V_numinput;
-print -0.123;
-print "Hello";
-V_textinput = "World";
-V_numinput = 5;
-V_numinput < input;
-F_addnums ( 1, 2.001, V_numinput );
-if eq(5,5) then 
-begin 
-print "Equal";
-end
-else 
-begin
-print "Not";
-end;
+
+    V_axx12 < input ;
+    V_axx12 = 0.12 ;
+    V_axx12 = 1 ;
+    V_axx13 = "Asdfa" ;
+    V_axx13 = "A" ;
+    V_axx14 = 2 ;
+    V_axx15 = sub ( V_axx14 , V_axx12 ) ;
+    F_abc ( V_axx12 , V_axx13 , V_axx14 ) ;
+    if grt ( V_axx12 , 1 )
+    then 
+    begin
+        V_axx12 = 1 ;
+    end
+    else
+    begin
+        V_axx12 = 0 ;
+    end ;
+    skip ;
+    skip ;
+    halt ;
+    print V_axx12 ; 
+
 end
 
-num F_addnums( V_numinput, V_numinput, V_numinput)
-{ 
-num V_a , num V_b , num V_c , 
-begin 
-skip;
+void F_abc ( V_axx , V_axy , V_ayy ) {
+    num V_bx ,
+    num V_by ,
+    num V_bz ,
+    begin
+        if eq ( V_bx , V_bz )
+        then begin
+            V_axx12 = V_by ;
+        end
+        else begin
+        end ;
+        F_abd ( V_bx , V_by , V_bz ) ;
+    end
+}
+    void F_abd ( V_axx , V_axy , V_ayy ) {
+        num V_bx ,
+        num V_by ,
+        num V_bz ,
+        begin
+        end
+    }
+    end
 end
-} 
-end
+
+num F_acc ( V_axx , V_axy , V_ayy ) {
+    num V_bx ,
+    num V_by ,
+    num V_bz ,
+    begin
+    return V_bx ;
+    end
+}
+end 
