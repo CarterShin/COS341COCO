@@ -215,7 +215,7 @@ public class Lexer {
             int lineNumber = 1;
             Boolean reset = false;
             ArrayList<Token> tokens = new ArrayList<Token>();
-
+    
             while (true) {
                 try {
                     // read into sub_stream until a whitespace is found
@@ -229,9 +229,9 @@ public class Lexer {
                             sub_stream += ch;
                         }
                     }
-
+    
                     // get tokens out of substream and add to the overall token set
-                    if (reset) {
+                    if (reset || sub_stream.length() > 0) {
                         reset = false;
                         if (sub_stream.length() > 0) {
                             tokens.addAll(tokenize(sub_stream, currentID, lineNumber));
@@ -239,13 +239,23 @@ public class Lexer {
                         }
                         sub_stream = "";
                     }
-
+    
                 } catch (IOException e) {
-                    System.out.println("\n" + e.getMessage());
-                    break;
+                    if (e.getMessage().equals("End of input file reached.")) {
+                        // Process any remaining characters in the buffer
+                        if (sub_stream.length() > 0) {
+                            tokens.addAll(tokenize(sub_stream, currentID, lineNumber));
+                        }
+                        // Add EOF token
+                        tokens.add(new Token(TokenClass.EOF, "$", tokens.size()));
+                        break;
+                    } else {
+                        System.out.println("\n" + e.getMessage());
+                        break;
+                    }
                 }
             }
-
+    
             fileCharReader.close();
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();

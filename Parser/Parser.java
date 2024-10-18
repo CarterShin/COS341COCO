@@ -318,9 +318,9 @@ public class Parser {
     }    
 
     private Token getCurrentToken() {
-        if (currentTokenIndex >= tokens.size()) {
-            return new Token(TokenClass.EOF, "$", tokens.size());
-        }
+        // if (currentTokenIndex >= tokens.size()) {
+        //     return new Token(TokenClass.EOF, "$", tokens.size());
+        // }
         return tokens.get(currentTokenIndex);
     }
 
